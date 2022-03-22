@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  qr-code-generator-bot:
+    container_name: qr-code-generator-bot
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    restart: unless-stopped
