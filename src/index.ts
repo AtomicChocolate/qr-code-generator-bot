@@ -11,9 +11,8 @@ const client = new Client({
 });
 
 client.commands = new Collection();
-const commandFiles = fs
-	.readdirSync(`${__dirname}/commands`)
-	.filter((file) => file.endsWith(".ts"));
+const commandFiles = fs.readdirSync(`${__dirname}/commands`);
+// .filter((file) => file.endsWith(".ts"));
 
 for (const file of commandFiles) {
 	const command = require(`${__dirname}/commands/${file}`);
@@ -25,11 +24,10 @@ client.once("ready", () => {
 });
 
 client.on("interactionCreate", async (interaction) => {
-	if (!interaction.isCommand()) return;
-
+	// if (interaction.isCommand()) {
 	const command = client.commands.get(interaction.commandName);
 
-	if (!command) return;
+	// if (!command) return;
 	try {
 		await command.execute(interaction);
 	} catch (error) {
@@ -39,6 +37,11 @@ client.on("interactionCreate", async (interaction) => {
 			ephemeral: true,
 		});
 	}
+	// } else if (interaction.isContextMenu()) {
+	// 	await interaction.deferReply({ ephemeral: false });
+	// 	const command = client.commands.get(interaction.commandName);
+	// 	if (command) command.run(client, interaction);
+	// }
 });
 
 client.login(process.env.TOKEN);
