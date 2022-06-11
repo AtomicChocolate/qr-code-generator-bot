@@ -2,7 +2,7 @@
 
 A utility Discord bot that can generate QR codes with a given link. It can also add an emoji or small image to the center of the generated QR code.
 
-You can add the bot with [this link](https://discord.com/api/oauth2/authorize?client_id=949174768756748338&permissions=0&scope=bot%20applications.commands).
+You can add the bot with [this link](https://discord.com/api/oauth2/authorize?client_id=955649355740770324&permissions=0&scope=bot%20applications.commands).
 
 If you want to have everything local, first clone the repository:
 
