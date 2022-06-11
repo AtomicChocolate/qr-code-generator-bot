@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 
 # Install dependencies
 COPY package*.json ./
-RUN npm install
+RUN npm install --omit=dev
 
 # Build app
 COPY tsconfig.json ./
