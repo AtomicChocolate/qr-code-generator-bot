@@ -17,6 +17,10 @@ module.exports = {
         const input = interaction.options.getString("input");
         const result = await GenerateQR(input);
         if (result === undefined) {
+            interaction.reply({
+                content: "I couldn't find a link in your request.",
+                ephemeral: true,
+            });
             return;
         }
 
