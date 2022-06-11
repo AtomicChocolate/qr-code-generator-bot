@@ -29,7 +29,7 @@ client.on("interactionCreate", async (interaction) => {
     // if (interaction.isCommand()) {
     const command = client.commands.get(interaction.commandName);
 
-    // if (!command) return;
+    // if (!command) return;z
     try {
         await command.execute(interaction);
     } catch (error) {

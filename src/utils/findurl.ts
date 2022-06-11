@@ -1,12 +1,7 @@
-const URLRegex =
-    /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
-const removeEndingCommasWhitespace = /,\s*$/;
+import urlRegex from "url-regex";
 
 function FindURL(input: string): string | undefined {
-    return input
-        .match(URLRegex)
-        ?.toString()
-        .replace(removeEndingCommasWhitespace, "");
+    return input.match(urlRegex({ strict: false }))?.[0];
 }
 
 export default FindURL;

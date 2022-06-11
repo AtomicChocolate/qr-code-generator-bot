@@ -19,7 +19,7 @@ async function GenerateQR(message: string) {
                 ? URL
                 : "(URL too long to fit, so it's in the description.)"
         )
-        .setURL("https://" + URL)
+        .setURL(URL.startsWith("http") ? URL : "https://" + URL)
         .setDescription(URL.length <= 256 ? "" : URL) //Put long URLs here if they can't fit in the title
         .setImage("attachment://qrcode.png");
     return { embeds: [reply], files: [attachment] };
