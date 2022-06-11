@@ -7,6 +7,11 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 
+# Build app
+COPY tsconfig.json ./
+ADD src ./src
+RUN npm run build
+
 # Cache app source
 COPY . .
 
