@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "ts-node src/deploy-commands.ts && ts-node src/index.ts",
         "build": "tsc --build",
-        "start": "node bin/index.js"
+        "start": "node bin/deploy-commands.js && node bin/index.js"
     },
     "repository": {
         "type": "git",
